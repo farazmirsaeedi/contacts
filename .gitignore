@@ -10,7 +10,7 @@ lerna-debug.log*
 node_modules
 server
 dist
-bulid
+build
 dist-ssr
 *.local
 
