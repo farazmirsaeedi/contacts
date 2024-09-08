@@ -13,7 +13,7 @@ const Contact = ({ contact, deleteContact }) => {
                 src={contact.photo}
                 alt={contact.fullname}
                 style={{ border: `1px solid ${PURPLE}` }}
-                className="img-fluid rounded"
+                className="img-fluid rounded img-w"
               />
             </div>
             <div className="col-md-7 col-sm-7">
