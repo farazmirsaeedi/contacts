@@ -89,7 +89,127 @@ const EditContact = () => {
                 style={{ backgroundColor: "#44475a", borderRadius: "1em" }}
               >
                 <div className="col-md-8">
-                  
+                  <Formik
+                    initialValues={contact}
+                    validationSchema={contactSchema}
+                    onSubmit={(values) => {
+                      submitForm(values);
+                    }}
+                  >
+                    <Form>
+                      <div className="mb-2">
+                        <Field
+                          name="fullname"
+                          type="text"
+                          className="form-control"
+                          placeholder="نام و نام خانوادگی"
+                        />
+                        <ErrorMessage
+                          name="fullname"
+                          render={(msg) => (
+                            <div className="text-danger">{msg}</div>
+                          )}
+                        />
+                      </div>
+                      <div className="mb-2">
+                        <Field
+                          name="photo"
+                          type="text"
+                          className="form-control"
+                          placeholder="آدرس تصویر"
+                        />
+
+                        <ErrorMessage
+                          name="photo"
+                          render={(msg) => (
+                            <div className="text-danger">{msg}</div>
+                          )}
+                        />
+                      </div>
+                      <div className="mb-2">
+                        <Field
+                          name="mobile"
+                          type="number"
+                          className="form-control"
+                          placeholder="شماره موبایل"
+                        />
+
+                        <ErrorMessage
+                          name="mobile"
+                          render={(msg) => (
+                            <div className="text-danger">{msg}</div>
+                          )}
+                        />
+                      </div>
+                      <div className="mb-2">
+                        <Field
+                          name="email"
+                          type="email"
+                          className="form-control"
+                          placeholder="آدرس ایمیل"
+                        />
+
+                        <ErrorMessage
+                          name="email"
+                          render={(msg) => (
+                            <div className="text-danger">{msg}</div>
+                          )}
+                        />
+                      </div>
+                      <div className="mb-2">
+                        <Field
+                          name="job"
+                          type="text"
+                          className="form-control"
+                          placeholder="شغل"
+                        />
+
+                        <ErrorMessage
+                          name="job"
+                          render={(msg) => (
+                            <div className="text-danger">{msg}</div>
+                          )}
+                        />
+                      </div>
+                      <div className="mb-2">
+                        <Field
+                          name="group"
+                          as="select"
+                          className="form-control"
+                        >
+                          <option value="">انتخاب گروه</option>
+                          {groups.length > 0 &&
+                            groups.map((group) => (
+                              <option key={group.id} value={group.id}>
+                                {group.name}
+                              </option>
+                            ))}
+                        </Field>
+
+                        <ErrorMessage
+                          name="group"
+                          render={(msg) => (
+                            <div className="text-danger">{msg}</div>
+                          )}
+                        />
+                      </div>
+                      <div className="mx-2">
+                        <input
+                          type="submit"
+                          className="btn"
+                          style={{ backgroundColor: PURPLE }}
+                          value="ویرایش مخاطب"
+                        />
+                        <Link
+                          to={"/contacts"}
+                          className="btn mx-2"
+                          style={{ backgroundColor: COMMENT }}
+                        >
+                          انصراف
+                        </Link>
+                      </div>
+                    </Form>
+                  </Formik>
                 </div>
                 <div className="col-md-4">
                   <img
