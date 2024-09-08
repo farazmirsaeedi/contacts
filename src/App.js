@@ -181,6 +181,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Navigate to="/contacts" />} />
           <Route path="contacts" element={<Contacts />} />
+          <Route path="contacts/contacts" element={<Contacts />} />
           <Route path="contacts/add" element={<AddContact />} />
           <Route path="contacts/:contactId" element={<ViewContact />} />
           <Route path="contacts/edit/:contactId" element={<EditContact />} />
