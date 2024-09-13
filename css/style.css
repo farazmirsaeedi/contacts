@@ -12,3 +12,13 @@
 .Toastify__toast-body {
   font-family: "Vazir", tahoma !important;
 }
+.img-w{
+  width: 180px;
+  height: 160px;
+}
+@media (max-width:768px) {
+  .img-w{
+    width: 100%;
+    height: 160px;
+  }
+}
