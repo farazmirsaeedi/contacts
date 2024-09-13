@@ -4,11 +4,11 @@ import { CURRENTLINE, CYAN, ORANGE, PURPLE, RED } from "../../helpers/colors";
 
 const Contact = ({ contact, deleteContact }) => {
   return (
-    <div className="col-md-6">
+    <div className="col-12 col-lg-6">
       <div style={{ backgroundColor: CURRENTLINE }} className="card my-2">
         <div className="card-body">
-          <div className="row align-items-center d-flex justify-content-around">
-            <div className="col-md-4 col-sm-4">
+          <div className="row align-items-center d-flex justify-content-around gap-2">
+            <div className="col-sm-4">
               <img
                 src={contact.photo}
                 alt={contact.fullname}
@@ -16,8 +16,8 @@ const Contact = ({ contact, deleteContact }) => {
                 className="img-fluid rounded img-w"
               />
             </div>
-            <div className="col-md-7 col-sm-7">
-              <ul className="list-group">
+            <div className="col-sm-6">
+              <ul className="list-group pe-0 ">
                 <li className="list-group-item list-group-item-dark">
                   نام و نام خانوداگی :{"  "}
                   <span className="fw-bold">{contact.fullname}</span>
@@ -34,7 +34,7 @@ const Contact = ({ contact, deleteContact }) => {
                 </li>
               </ul>
             </div>
-            <div className="col-md-1 col-sm-1 d-flex flex-column align-items-center">
+            <div className="col-sm-1 d-flex flex-sm-column align-items-center justify-content-between gap-2 gap-md-0">
               <Link
                 to={`/contacts/${contact.id}`}
                 className="btn my-1"
